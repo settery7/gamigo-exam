@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 753628746}
   - component: {fileID: 753628745}
   m_Layer: 5
-  m_Name: Border
+  m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1122066228}
+  - {fileID: 1020959201}
   m_Father: {fileID: 880283296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -965,8 +967,6 @@ RectTransform:
   m_Children:
   - {fileID: 845489304}
   - {fileID: 753628744}
-  - {fileID: 1122066228}
-  - {fileID: 1020959201}
   m_Father: {fileID: 767840047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1037,16 +1037,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020959200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 880283296}
+  m_Father: {fileID: 753628744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -110}
+  m_AnchoredPosition: {x: 0, y: 0.000022888184}
   m_SizeDelta: {x: 246, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020959202
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   - MonsterType: 4
     Sprite: {fileID: 21300000, guid: 0354054eb176b7c4e9826943dfa6bc6e, type: 3}
   _image: {fileID: 880283297}
-  _healthBar: {fileID: 0}
+  _healthBar: {fileID: 1020959202}
   _damageAmount: 10
 --- !u!114 &1028097710
 MonoBehaviour:
@@ -1178,6 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _swatchContainer: {fileID: 2098680295}
   _swatchPrefab: {fileID: 69461483335239207, guid: 0a46a544baccf8e47a9f558c48135b45, type: 3}
+  _maxDisplayedSwatches: 50
 --- !u!114 &1028097711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,10 +1222,10 @@ MonoBehaviour:
       inWeight: 0.33051
       outWeight: 0.3460947
     - serializedVersion: 3
-      time: 100
-      value: 400
-      inSlope: 29.859737
-      outSlope: 29.859737
+      time: 101.72473
+      value: 176.4945
+      inSlope: -1.0902693
+      outSlope: -1.0902693
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -1325,16 +1326,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122066227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 880283296}
+  m_Father: {fileID: 753628744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -110}
+  m_AnchoredPosition: {x: 0, y: 0.000022888184}
   m_SizeDelta: {x: 246, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122066229

@@ -20,15 +20,14 @@ namespace TestTask.Editable
             var monsterId = Random.Range(1, 1000);
             var monsterType = MonsterNameExtensions.MonsterTypeFromId(monsterId);
             var monsterMaxHealth = Random.Range(50, 201);
-            var monsterCurrentHealth = monsterMaxHealth;
 
-            MonsterData = new MonsterData(monsterId, monsterType, monsterMaxHealth, monsterCurrentHealth);
-            MonsterData.MonsterDeath += OnMonsterDied;
+            var monsterData = new MonsterData(monsterId, monsterType, monsterMaxHealth, monsterMaxHealth);
+            monsterData.MonsterDeath += OnMonsterDied;
 
-            return MonsterData;
+            return monsterData;
         }
 
-        public void OnMonsterDied()
+        private void OnMonsterDied()
         {
             MonsterData.MonsterDeath -= OnMonsterDied;
             MonsterData = SpawnMonster();

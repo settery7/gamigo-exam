@@ -9,6 +9,8 @@ namespace TestTask.Editable
         #region Packet Handlers
         public static void LoginDataReceived(Packet packet)
         {
+            if (ClientManager.Instance == null) return;
+
             int responseCode = packet.ReadInt();
             int clientId = packet.ReadInt();
 
@@ -17,6 +19,8 @@ namespace TestTask.Editable
 
         public static void MonsterSpawnReceived(Packet packet)
         {
+            if (ClientManager.Instance == null) return;
+
             int monsterId = packet.ReadInt();
             MonsterNames monsterType = (MonsterNames)packet.ReadInt();
             float maxHp = packet.ReadFloat();
@@ -28,6 +32,8 @@ namespace TestTask.Editable
 
         public static void ColorResponseReceived(Packet packet)
         {
+            if (ClientManager.Instance == null) return;
+
             int count = packet.ReadInt();
             var colors = new List<Color>(count);
             for (int i = 0; i < count; i++)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TestTask.NonEditable;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +20,18 @@ namespace TestTask.Editable
         [SerializeField] private Image _healthBar;
         [SerializeField] private float _damageAmount = 10f;
 
+        private Dictionary<MonsterNames, Sprite> _spriteLookup;
+
         public MonsterData CurrentMonster { get; private set; }
         public event Action MonsterChanged;
+
+        private void Awake()
+        {
+            _spriteLookup = new Dictionary<MonsterNames, Sprite>();
+            if (_monsterSprites == null) return;
+            foreach (var entry in _monsterSprites)
+                _spriteLookup[entry.MonsterType] = entry.Sprite;
+        }
 
         public void DealDamage()
         {
@@ -45,12 +56,8 @@ namespace TestTask.Editable
 
         private Sprite GetSprite(MonsterNames monsterType)
         {
-            foreach (var entry in _monsterSprites)
-            {
-                if (entry.MonsterType == monsterType)
-                    return entry.Sprite;
-            }
-            return null;
+            _spriteLookup.TryGetValue(monsterType, out var sprite);
+            return sprite;
         }
     }
 }

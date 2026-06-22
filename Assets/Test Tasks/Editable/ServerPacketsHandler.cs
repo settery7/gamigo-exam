@@ -80,10 +80,10 @@ namespace TestTask.Editable
 
         #endregion
     }
-}
 
-public enum LoginResponse
-{
-    Success = 0,
-    Failure = 1,
+    public enum LoginResponse
+    {
+        Success = 0,
+        Failure = 1,
+    }
 }
